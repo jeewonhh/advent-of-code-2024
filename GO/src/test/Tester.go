@@ -17,7 +17,7 @@ func NewTester(year int, day int) Tester {
 	return Tester{
 		year:       year,
 		day:        day,
-		input_file: fmt.Sprintf("../../inputs/puzzle-%02d.txt", day),
+		input_file: fmt.Sprintf("../../../inputs/puzzle-%02d.txt", day),
 	}
 }
 
