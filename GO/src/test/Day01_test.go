@@ -2,6 +2,7 @@ package test
 
 import (
 	"advent-of-code-2024/src/main"
+	"advent-of-code-2024/src/utils"
 	"testing"
 )
 
@@ -37,7 +38,7 @@ func (tester Day01Tester) TestPart01Mock(t *testing.T) {
 }
 
 func (tester Day01Tester) TestPart01(t *testing.T) {
-	left, right := tester.Tester.ParseInput()
+	left, right := utils.ParseTwoIntColumns(tester.input_file)
 	answer, _ := tester.solve.Part01(left, right)
 	want := 2367773
 	if answer != want {
@@ -54,7 +55,7 @@ func (tester Day01Tester) TestPart02Mock(t *testing.T) {
 }
 
 func (tester Day01Tester) TestPart02(t *testing.T) {
-	left, right := tester.Tester.ParseInput()
+	left, right := utils.ParseTwoIntColumns(tester.input_file)
 	answer, _ := tester.solve.Part02(left, right)
 	want := 21271939
 	if answer != want {

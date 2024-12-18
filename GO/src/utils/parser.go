@@ -45,3 +45,30 @@ func ParseTwoIntColumns(filename string) ([]int, []int) {
 	}
 	return left, right
 }
+
+func Parse2DInts(filename string) [][]int {
+	f, err := os.Open(filename)
+	if err != nil {
+		fmt.Print("There has been an error!: ", err)
+	}
+	defer f.Close()
+
+	var records [][]int
+	record_index := 0
+
+	scanner := bufio.NewScanner(f)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+
+		if strings.TrimSpace(line) == "" {
+			continue
+		}
+
+		fields := strings.Fields(line)
+		records = append(records, Map(fields, strconv.Atoi))
+		record_index++
+	}
+
+	return records
+}

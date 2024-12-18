@@ -1,7 +1,6 @@
 package test
 
 import (
-	"advent-of-code-2024/src/utils"
 	"fmt"
 	"testing"
 )
@@ -18,14 +17,5 @@ func NewTester(year int, day int) Tester {
 		year:       year,
 		day:        day,
 		input_file: fmt.Sprintf("../../../inputs/puzzle-%02d.txt", day),
-	}
-}
-
-func (tester *Tester) ParseInput() ([]int, []int) {
-	switch tester.day {
-	case 1:
-		return utils.ParseTwoIntColumns(tester.input_file)
-	default:
-		return []int{}, []int{}
 	}
 }
