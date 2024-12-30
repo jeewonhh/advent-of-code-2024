@@ -10,7 +10,6 @@ type Day02Tester struct {
 	Tester
 	solve   solution.Day02
 	records [][]int
-	memory  string
 }
 
 //7 6 4 2 1
